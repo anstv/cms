@@ -1,6 +1,7 @@
 <?php
 require_once $_SERVER['DOCUMENT_ROOT'] . '/engine/model/category.php';
 
+//вывод всех статей из одной категории
 function getOneCategory($category_id)
 {
     $categoryArticle = getCategoryList($category_id);
@@ -20,6 +21,7 @@ function getOneCategory($category_id)
 
 }
 
+//вывод всех статей в категории
 function getAllCategory()
 {
     $categoryArticle = getCategoryListAll();
@@ -38,4 +40,19 @@ function getAllCategory()
         echo "В категории нет статей!";
     }
 
+}
+
+//вывод всех категорий в меню
+function getMenuCategory()
+{
+    $categoryMenu = getCategoryMenu();
+
+    $menuArray = array();
+    while ($row = mysqli_fetch_array($categoryMenu)) {
+        $menuArray[] = $row;
+    }
+    global $site_cfg;
+    $title = 'Последние статьи';
+    $templatePart = 'category.php';
+    include 'engine/view/header.php';
 }

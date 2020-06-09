@@ -10,7 +10,15 @@ function getCategoryList($category_id)
 function getCategoryListAll()
 {
     global $db;
-    $query = $query = "SELECT article.*, category.name AS cname, category.title AS ctitle, category.id AS cid FROM article JOIN category ON article.category = category.id";
+    $query = "SELECT article.*, category.name AS cname, category.title AS ctitle, category.id AS cid FROM article JOIN category ON article.category = category.id";
+    $result = mysqli_query($db, $query) or die("Ошибка " . mysqli_error($link));
+    return $result;
+}
+
+function getCategoryMenu()
+{
+    global $db;
+    $query = "SELECT * FROM category";
     $result = mysqli_query($db, $query) or die("Ошибка " . mysqli_error($link));
     return $result;
 }
