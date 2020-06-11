@@ -5,14 +5,11 @@ require_once $_SERVER['DOCUMENT_ROOT'] . "/engine/config.php";
 require_once $_SERVER['DOCUMENT_ROOT'] . "/engine/dbconnect.php";
 
 //подключаем функции
-//require_once "engine/functions.php";
+require_once "engine/functions.php";
 
 //подключаем контролеры
 require_once  $_SERVER['DOCUMENT_ROOT'] . '/engine/controller/article.php';
 require_once  $_SERVER['DOCUMENT_ROOT'] . '/engine/controller/category.php';
-
-//вывод категорий в меню, работает на всех страницах
-getMenuCategory();
 
 //получаем get параметры
 $getArticle = NULL;

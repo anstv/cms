@@ -104,3 +104,17 @@ p{
 }
 
 .dropdown-menu:hover .dropdown-content {display: block;}
+
+.pagination {
+    list-style-position:inside;
+    list-style:none;
+}
+.pagination li {
+    display: inline-block;
+    margin:5px;
+    border:1px solid black;
+}
+.pagination li a {
+    display: block;
+    padding:5px;
+}
