@@ -11,6 +11,9 @@ require_once $_SERVER['DOCUMENT_ROOT'] . "/engine/dbconnect.php";
 require_once  $_SERVER['DOCUMENT_ROOT'] . '/engine/controller/article.php';
 require_once  $_SERVER['DOCUMENT_ROOT'] . '/engine/controller/category.php';
 
+//вывод категорий в меню, работает на всех страницах
+getMenuCategory();
+
 //получаем get параметры
 $getArticle = NULL;
 $getCategory = NULL;
@@ -29,20 +32,16 @@ if (isset($_GET['category'])) {
     $getCategory = (int)$_GET['category'];
 }
 
-//вывод категорий в меню, работает всегда
-getMenuCategory();
-
 //вывод отдельной статьи
 if ($getArticle != NULL) {
     getArticleData($getArticle);
 }
 
 //вывод статей отдельной категории
-if ($getCategory != 0 and $getCategory != 0) {
+if ($getCategory != NULL) {
     getOneCategory($getCategory);
 }
-
 //вывод всех статей из всех категорий (при category = 0)
-if ($getCategory != NULL and $getCategory == 0) {
+if ($getCategory === 0) {
     getAllCategory();
 }

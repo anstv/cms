@@ -10,5 +10,6 @@ $db = array(
 
 //общие настройки для всего сайта
 $site_cfg = array(
-    "name" => "Test CMS"
+    "name" => "Test CMS",
+    "pagination" => 5
 );

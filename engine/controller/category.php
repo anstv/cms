@@ -21,11 +21,10 @@ function getOneCategory($category_id)
 
 }
 
-//вывод всех статей в категории
+//вывод всех статей
 function getAllCategory()
 {
     $categoryArticle = getCategoryListAll();
-
     $articleArray = array();
     while ($row = mysqli_fetch_array($categoryArticle)) {
         $articleArray[] = $row;
